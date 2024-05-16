@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        ANSIBLE_HOME = tool name: 'ansible', type: 'hudson.plugins.ansible.AnsibleInstallation'
+    }
     stages{
         stage("ExecutePlaybook"){
             steps{
